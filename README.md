@@ -4,6 +4,8 @@ Fork from [official repository](https://github.com/webis-de/coling22-benchmark-f
 
 ### Data
 
+Download dataset and pretrained model [here](https://zenodo.org/record/7186761#.Y3DxncdBy5c)
+
 You can [download](https://webis.de/data#webis-causalqa-22) the Webis-CausalQA-22 corpus. To recreate the ELI5 part, check instructions bellow.
 
 The 10 datasets used to construct Webis-CausalQA-22 corpus:
