@@ -1,4 +1,4 @@
-# Causal QA: A Benchmark for Causal Question Answering
+# CausalQA: A Benchmark for Causal Question Answering
 
 Fork from [official repository](https://github.com/webis-de/coling22-benchmark-for-causal-question-answering)
 
