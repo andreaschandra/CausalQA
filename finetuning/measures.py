@@ -32,11 +32,7 @@ def _em(pred: str, ground_truth: str) -> int:
     return int(pred == ground_truth)
 
 
-def _calculate_measures(
-    measure: Callable[[str, str], Union[List[float], float]],
-    predictions: List[str],
-    ground_truths: List[str],
-) -> Tuple[float, List[float]]:
+def _calculate_measures(measure, predictions, ground_truths):
     result = 0
     samples = []
     for pred, ground_truth in zip(predictions, ground_truths):
@@ -73,15 +69,11 @@ def _rouge_l(
     )
 
 
-def all_metrics(
-    predictions: List[str], ground_truths: List[str]
-) -> Dict[str, Union[List[float], float]]:
+def all_metrics(predictions, ground_truths) :
     predictions = [preprocess(pred) for pred in predictions]
     ground_truths = [[preprocess(gt) for gt in gts] for gts in ground_truths]
 
-    rougel, sample_rougel_precision, sample_rougel_recall, sample_rougel_f1 = _rouge_l(
-        predictions, ground_truths
-    )
+    rougel, sample_rougel_precision, sample_rougel_recall, sample_rougel_f1 = _rouge_l(predictions, ground_truths)
     f1, sample_f1 = _calculate_measures(_f1, predictions, ground_truths)
     em, sample_em = _calculate_measures(_em, predictions, ground_truths)
 
