@@ -42,9 +42,7 @@ def _calculate_measures(measure, predictions, ground_truths):
     return result / len(predictions), samples
 
 
-def _rouge_l(
-    predictions: List[str], ground_truths: List[str]
-) -> Tuple[Dict[str, float], List[float], List[float], List[float]]:
+def _rouge_l(predictions, ground_truths):
     scorer = rouge_scorer.RougeScorer(["rougeL"])
     aggregator = scoring.BootstrapAggregator()
     samples_precision = []
